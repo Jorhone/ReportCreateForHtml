@@ -1,3 +1,4 @@
 *.user
 .svn/
 build/
+bin/
