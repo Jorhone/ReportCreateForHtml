@@ -474,6 +474,9 @@ uint32_t CHtmlForCSS::SetCSSAttribute(const nsHtmlForCSS::CTableHeadAttribute vT
     //CSS属性数据结构
     sCSSAttribute tCSSAttribute;
 
+    //边框属性
+    tCSSAttribute.append(GetCSSAttributes(vTableHeadAttribute.m_BorderAttribute));
+
     //字体属性
     tCSSAttribute.append(GetCSSAttributes(vTableHeadAttribute.m_FontAttribute));
 
@@ -496,6 +499,14 @@ uint32_t CHtmlForCSS::SetCSSAttribute(const nsHtmlForCSS::CTableHeadAttribute vT
         QString tStyleAttribute = GetStyleAttribute(tStyleKey, tStyleValue);
         tCSSAttribute.StyleAttributeList.push_back(tStyleAttribute);
     }
+
+//    {
+//        //边框属性
+//        QString tStyleKey = m_StyleAttributeTypeHash.value(nsHtmlForCSS::e_StyleAttribute_Border);
+//        QString tStyleValue = "inherit";
+//        QString tStyleAttribute = GetStyleAttribute(tStyleKey, tStyleValue);
+//        tCSSAttribute.StyleAttributeList.push_back(tStyleAttribute);
+//    }
 
     //列宽比例
     if(vTableHeadAttribute.m_IsUseWidthRange)
@@ -524,6 +535,9 @@ uint32_t CHtmlForCSS::SetCSSAttribute(const nsHtmlForCSS::CTableDataAttribute vT
     //CSS属性数据结构
     sCSSAttribute tCSSAttribute;
 
+    //边框属性
+    tCSSAttribute.append(GetCSSAttributes(vTableDataAttribute.m_BorderAttribute));
+
     //字体属性
     tCSSAttribute.append(GetCSSAttributes(vTableDataAttribute.m_FontAttribute));
 
@@ -546,6 +560,14 @@ uint32_t CHtmlForCSS::SetCSSAttribute(const nsHtmlForCSS::CTableDataAttribute vT
         QString tStyleAttribute = GetStyleAttribute(tStyleKey, tStyleValue);
         tCSSAttribute.StyleAttributeList.push_back(tStyleAttribute);
     }
+
+//    {
+//        //边框属性
+//        QString tStyleKey = m_StyleAttributeTypeHash.value(nsHtmlForCSS::e_StyleAttribute_Border);
+//        QString tStyleValue = "inherit";
+//        QString tStyleAttribute = GetStyleAttribute(tStyleKey, tStyleValue);
+//        tCSSAttribute.StyleAttributeList.push_back(tStyleAttribute);
+//    }
 
     uint32_t tCSSAttributeIndex = GetSequenceID();
     tCSSAttribute.StyleClassName = QString("td_%1").arg(tCSSAttributeIndex);
@@ -681,6 +703,7 @@ void CHtmlForCSS::InitData()
         {nsHtmlForCSS::e_StyleAttribute_Margin,             "margin"},
         {nsHtmlForCSS::e_StyleAttribute_Padding,            "padding"},
         {nsHtmlForCSS::e_StyleAttribute_BackgroundColor,    "background-color"},
+        {nsHtmlForCSS::e_StyleAttribute_Border,             "border"},
         {nsHtmlForCSS::e_StyleAttribute_BorderStyle,        "border-style"},
         {nsHtmlForCSS::e_StyleAttribute_BorderWidth,        "border-width"},
         {nsHtmlForCSS::e_StyleAttribute_BorderColor,        "border-color"},

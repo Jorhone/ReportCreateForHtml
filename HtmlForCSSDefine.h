@@ -36,6 +36,7 @@ typedef enum
     e_StyleAttribute_BackgroundColor,       //背景颜色
 
     //边框样式属性
+    e_StyleAttribute_Border,                //边框属性总
     e_StyleAttribute_BorderStyle,           //边框样式
     e_StyleAttribute_BorderWidth,           //边框宽度
     e_StyleAttribute_BorderColor,           //边框颜色
@@ -203,6 +204,7 @@ public:
 class CTableDataAttribute
 {
 public:
+    CBorderAttribute m_BorderAttribute;
     CFontAttribute  m_FontAttribute;
     CTextAttribute  m_TextAttribute;
 
